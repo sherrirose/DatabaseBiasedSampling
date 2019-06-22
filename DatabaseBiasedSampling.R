@@ -36,7 +36,7 @@ nCoC<-n-nCC                  #number of controls in EHR cohort
 nCoM<-M*nCC                  #number of controls in sample
 n0[p]<-nCC*(M+1)             #number of observations in study sample
 
-####Subset the EHRvcohort into case and control groups by X1####
+####Subset the EHRcohort into case and control groups by X1####
 casesEHRcohort1<-EHRcohort[EHRcohort[,nColY]==1 & EHRcohort[,nColX1]==1,]
 casesEHRcohort0<-EHRcohort[EHRcohort[,nColY]==1 & EHRcohort[,nColX1]==0,]
 contEHRcohort1<-EHRcohort[EHRcohort[,nColY]==0 & EHRcohort[,nColX1]==1,]
