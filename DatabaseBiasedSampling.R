@@ -9,9 +9,9 @@ tOR<-1.1
 pop <- data.frame(X1 = rbinom(nPOP, 1, .5), X2 = rbinom(nPOP, 1, .75),
   X3 = rbinom(nPOP, 1, .25), X4 = rbinom(nPOP, 1, .4), X5 = rbinom(nPOP, 1, .1),
   X6 = rbinom(nPOP, 1, .8), X7 = rbinom(nPOP, 1, .3), X8 = rbinom(nPOP, 1, .5))
-pop = transform(pop,        #add A
+pop <- transform(pop,        #add A
   A = rbinom(nPOP, 1, 1/(1+exp(-(3*X1+X2+2*X3-2*X4-3*X5+3*X6-4*X7-4*X8)))))
-pop = transform(pop,        #add Y
+pop <- transform(pop,        #add Y
   Y = rbinom(nPOP, 1, 1/(1+exp(-(tOR*A+X1-1.5*X2-3*X3-X4-3*X5-3*X6+X7-3*X8)))))
 sum(pop$Y)/nPOP             #probability of outcome
 
